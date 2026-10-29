@@ -50,4 +50,12 @@ Como a API só tem textos em inglês, as sinopses são traduzidas com a API púb
 ## Imagens e video:
 https://youtu.be/1_LEudkIkz4
 
+<img width="1900" height="867" alt="image" src="https://github.com/user-attachments/assets/7a7bbdaf-e6a3-492b-9249-4a46d6c63a59" />
+<img width="1901" height="857" alt="image" src="https://github.com/user-attachments/assets/0529ead7-29e6-42b5-9ba4-f32501548cc0" />
+<img width="1297" height="856" alt="image" src="https://github.com/user-attachments/assets/d0468cac-fafa-4503-9628-d14790101327" />
+<img width="1025" height="871" alt="image" src="https://github.com/user-attachments/assets/daf03f0c-359f-42ee-8d82-53887bba2683" />
+<img width="1180" height="777" alt="image" src="https://github.com/user-attachments/assets/8ca84235-1873-44b8-a519-dbde4dec92fc" />
+<img width="1250" height="851" alt="image" src="https://github.com/user-attachments/assets/e9c878f4-ec9b-42d4-b361-301506ffe038" />
+
+
 
