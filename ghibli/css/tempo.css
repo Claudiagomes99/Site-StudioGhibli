@@ -1,0 +1,167 @@
+
+/* ---------- 1. Linha e marcos ---------- */
+.tempo {
+  position: relative;
+  max-width: 900px;
+  margin: 3rem auto 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tempo::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 4px;
+  translate: -50% 0;
+  background: repeating-linear-gradient(180deg, var(--verde) 0 12px, transparent 12px 22px);
+}
+
+.marco {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.ano {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  translate: -50% -50%;
+  padding: 0.15rem 0.85rem;
+  font-weight: 700;
+  color: #3b2412;
+  background: var(--sol-claro);
+  border: 3px solid var(--sol);
+  border-radius: 999px;
+}
+
+@supports (animation-timeline: view()) {
+  .marco {
+    animation: surgir linear both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 30%;
+  }
+}
+
+
+/* ---------- 2. Cards ---------- */
+.cartao-tempo {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  grid-column: 1;
+  margin-right: 3rem;
+  padding: 1rem;
+  text-decoration: none;
+  color: var(--terra);
+  background: var(--papel);
+  border: 2px solid rgba(90, 65, 48, 0.2);
+  border-radius: 20px 20px 20px 6px;
+  box-shadow: 0 6px 0 rgba(79, 122, 90, 0.2);
+  transition: transform 0.2s;
+}
+
+.marco:nth-child(even) .cartao-tempo {
+  grid-column: 2;
+  margin-right: 0;
+  margin-left: 3rem;
+}
+
+.cartao-tempo:hover {
+  transform: translateY(-3px);
+}
+
+.cartao-tempo > div:last-child {
+  flex: 1;
+}
+
+.cartao-tempo h3 {
+  font-family: "Kaisei Decol", serif;
+  font-size: 1.1rem;
+  line-height: 1.25;
+  color: var(--verde-escuro);
+}
+
+.mini.arco {
+  flex: 0 0 80px;
+  height: 115px;
+  margin: 0;
+  border-width: 2px;
+}
+
+.mini .runa {
+  font-size: 1.8rem;
+}
+
+.diretor,
+.nota {
+  font-size: 0.85rem;
+  color: #7a6a5a;
+}
+
+
+/* ---------- 3. Barra de nota ---------- */
+.barra {
+  height: 8px;
+  margin: 0.4rem 0 0.15rem;
+  overflow: hidden;
+  background: rgba(79, 122, 90, 0.18);
+  border-radius: 999px;
+}
+
+.barra span {
+  display: block;
+  width: var(--n);
+  height: 100%;
+  background: linear-gradient(90deg, var(--verde), var(--sol));
+  border-radius: 999px;
+  transform-origin: left;
+  animation: crescer 1s ease both;
+}
+
+@keyframes crescer {
+  from {
+    transform: scaleX(0);
+  }
+}
+
+
+/* ---------- 4. Telas pequenas ---------- */
+@media (max-width: 700px) {
+  .tempo::before {
+    left: 18px;
+  }
+
+  .marco {
+    display: block;
+    padding-left: 2.75rem;
+  }
+
+  .ano {
+    top: 0;
+    left: 18px;
+    translate: -50% 0;
+  }
+
+  .cartao-tempo,
+  .marco:nth-child(even) .cartao-tempo {
+    margin: 2rem 0 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marco,
+  .barra span {
+    animation: none;
+  }
+
+  .cartao-tempo {
+    transition: none;
+  }
+}

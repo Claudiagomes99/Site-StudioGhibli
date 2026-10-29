@@ -1,0 +1,121 @@
+
+/* ---------- 1. Filme em destaque ---------- */
+.destaque {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  min-height: 340px;
+  margin-top: 2.5rem;
+  overflow: hidden;
+  color: #fff8e8;
+  background: linear-gradient(135deg, var(--verde), var(--verde-escuro));
+  border: 3px solid var(--verde);
+  border-radius: 28px 28px 28px 8px;
+  box-shadow: 0 8px 0 rgba(79, 122, 90, 0.25);
+}
+
+.destaque > img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.velo {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(20, 40, 30, 0.92) 0%, rgba(20, 40, 30, 0.45) 55%, transparent 100%);
+}
+
+.texto-destaque {
+  position: relative;
+  max-width: 620px;
+  padding: 1.5rem 1.75rem;
+}
+
+.rotulo {
+  display: inline-block;
+  padding: 0.1rem 0.9rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #3b2412;
+  background: var(--sol-claro);
+  border-radius: 999px;
+}
+
+.destaque h2 {
+  margin: 0.5rem 0 0.1rem;
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  text-align: left;
+  color: #fff;
+}
+
+.meta {
+  margin-bottom: 0.5rem;
+  font-size: 0.92rem;
+  color: var(--sol-claro);
+}
+
+
+/* ---------- 2. Portais ---------- */
+.portais {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.75rem;
+  margin-top: 2.5rem;
+}
+
+.portal {
+  position: relative;
+  display: block;
+  padding: 1.1rem 1.1rem 1.5rem;
+  text-align: center;
+  text-decoration: none;
+  color: var(--terra);
+  background: var(--papel);
+  border: 2px solid rgba(90, 65, 48, 0.2);
+  border-radius: 24px 24px 24px 8px;
+  box-shadow: 0 8px 0 rgba(79, 122, 90, 0.2);
+  animation: surgir 0.5s ease both;
+  animation-delay: calc(var(--i, 0) * 50ms);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.portal:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 0 rgba(79, 122, 90, 0.2);
+}
+
+.portal:hover .foto img {
+  transform: scale(1.06);
+}
+
+.foto {
+  display: grid;
+  place-items: center;
+  height: 140px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  border: 3px solid var(--verde);
+  border-radius: 999px 999px 14px 14px;
+  background: linear-gradient(180deg, var(--ceu), var(--ceu-claro));
+}
+
+.foto > * {
+  grid-area: 1 / 1;
+}
+
+.foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portal {
+    animation: none;
+    transition: none;
+  }
+}

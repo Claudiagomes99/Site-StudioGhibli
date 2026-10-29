@@ -1,0 +1,10 @@
+
+/* Janela oval, como a de um avião */
+.arco {
+  height: 170px;
+  border-radius: 50%;
+}
+
+.texto {
+  min-height: 3.5rem;
+}

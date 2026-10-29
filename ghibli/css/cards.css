@@ -1,0 +1,93 @@
+
+/* ---------- 1. Área de resultados ---------- */
+.paginas {
+  margin-top: 3rem;
+}
+
+.contagem {
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #4a6b7a;
+}
+
+.grade {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.75rem;
+}
+
+
+/* ---------- 2. Card ---------- */
+.pagina {
+  position: relative;
+  padding: 1.1rem 1.1rem 1.4rem;
+  background: var(--papel);
+  border: 2px solid rgba(90, 65, 48, 0.2);
+  border-radius: 24px 24px 24px 8px;
+  box-shadow: 0 8px 0 rgba(79, 122, 90, 0.2);
+  animation: surgir 0.5s ease both;
+  animation-delay: calc(var(--i, 0) * 50ms);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.pagina:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 0 rgba(79, 122, 90, 0.2);
+}
+
+.pagina:hover .arco img {
+  transform: scale(1.06);
+}
+
+.moldura {
+  position: relative;
+}
+
+
+/* ---------- 3. Conteúdo do card ---------- */
+.legenda {
+  margin: -0.5rem 0 0.75rem;
+  font-size: 0.8rem;
+  text-align: center;
+  color: #7a6a5a;
+}
+
+.encanto {
+  margin-bottom: 0.75rem;
+  font-size: 0.95rem;
+  text-align: center;
+  color: #7a6a5a;
+}
+
+.texto {
+  margin: 0.5rem 0 0.75rem;
+  font-size: 0.95rem;
+}
+
+.pagina dl {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.3rem 1rem;
+  align-items: baseline;
+}
+
+.pagina dt,
+.pagina dd {
+  margin: 0;
+}
+
+.mais {
+  margin-top: 0.75rem;
+  text-align: center;
+}
+
+.ler {
+  font-weight: 700;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pagina {
+    animation: none;
+    transition: none;
+  }
+}

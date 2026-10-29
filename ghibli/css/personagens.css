@@ -1,0 +1,9 @@
+
+/* Retrato: arco um pouco mais alto, foco na parte de cima da cena */
+.arco {
+  height: 210px;
+}
+
+.arco img {
+  object-position: center 30%;
+}
